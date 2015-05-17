@@ -71,7 +71,7 @@ stepsNoNas[is.na(steps$steps),]$steps =
 Show a histogram of the total number of steps per day.
 ```{r echo=TRUE}
 totalStepsNoNas = stepsNoNas %>% group_by(date1) %>% summarise(steps=sum(steps, na.rm=TRUE)) %>% arrange(date1)
-hist(totalStepsNoNas$steps)
+hist(totalStepsNoNas$steps, main="Number of Steps per Day (missing values replaced)", xlab="Number of steps")
 ```
 
 Compute the mean and median of the number of steps per day.

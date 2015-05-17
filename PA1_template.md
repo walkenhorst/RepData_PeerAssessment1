@@ -98,7 +98,7 @@ Show a histogram of the total number of steps per day.
 
 ```r
 totalStepsNoNas = stepsNoNas %>% group_by(date1) %>% summarise(steps=sum(steps, na.rm=TRUE)) %>% arrange(date1)
-hist(totalStepsNoNas$steps)
+hist(totalStepsNoNas$steps, main="Number of Steps per Day (missing values replaced)", xlab="Number of steps")
 ```
 
 ![](PA1_template_files/figure-html/unnamed-chunk-9-1.png) 
